@@ -289,10 +289,6 @@ pre {
   overflow: auto;
   padding: 1.6rem; }
 
-code, kbd, tt, var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: .9375rem; }
-
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help; }
@@ -454,7 +450,7 @@ a {
   clear: both;
   display: block;
   float: left;
-  width: 100%; }
+  width: 50%; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -600,7 +596,19 @@ a {
   margin: 0 0 1.5rem; }
 
 body {
-  font-family: "Exo Web"; }
+  font-family: "Exo Web";
+  background: #222222;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 15vh 15vh 10vh 20vh 40vh;
+  grid-template-areas: "header quote author another footer"; }
+
+.content-area {
+  padding: 10px 10px 10px 10px; }
+  .content-area a {
+    text-decoration: none; }
 
 /*--------------------------------------------------------------
 # Media
