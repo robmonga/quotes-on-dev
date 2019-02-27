@@ -100,7 +100,7 @@ a {
 .main-navigation.toggled ul {
 	display: block;
 }
-
+// TODO: REMOVE DISPLAY NONE BULLSHIT
 @media screen and (min-width: 768px) {
 	.menu-toggle {
 		display: none;

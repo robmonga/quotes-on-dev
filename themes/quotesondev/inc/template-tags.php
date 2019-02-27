@@ -34,10 +34,16 @@ function qod_numbered_pagination( $query_type = '' ) {
 		echo '</nav>';
 	endif;
 }
-
+// function to filter to one quote
 function show_single_quote ($query) {
 	if($query->is_home() && $query->is_main_query()) {
 		$query->set('posts_per_page', 1);
 	} 
 }
 add_filter('pre_get_posts', 'show_single_quote', 1);
+
+/*have a quote(post) on screen
+have a button 
+when clicked the button clears the quote on screen
+then prints another quote on screen
+ */
