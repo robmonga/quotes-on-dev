@@ -38,6 +38,7 @@ function qod_numbered_pagination( $query_type = '' ) {
 function show_single_quote ($query) {
 	if($query->is_home() && $query->is_main_query()) {
 		$query->set('posts_per_page', 1);
+		$query->set('orderby', 'rand');
 	} 
 }
 add_filter('pre_get_posts', 'show_single_quote', 1);

@@ -63,8 +63,8 @@ function qod_scripts() {
 	
 	$script_url = get_template_directory_uri() . '/js/api.js';
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'red_comments', $script_url, array( 'jquery' ), false, true );
-   wp_localize_script( 'red_comments', 'red_vars', array(
+	wp_enqueue_script( 'qod_api', $script_url, array( 'jquery' ), false, true );
+   wp_localize_script( 'qod_api', 'qod_vars', array(
 	   'rest_url' => esc_url_raw( rest_url() ),
 	   'wpapi_nonce' => wp_create_nonce( 'wp_rest' ),
 	   'post_id' => get_the_ID()
