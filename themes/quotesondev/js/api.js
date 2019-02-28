@@ -2,8 +2,8 @@
 	$('#show-more').on('click', function(event) {
 	event.preventDefault();
 	$.ajax({
-		method: 'get',//TODO:red_vars not defined, does that matter???
-		url:  red_vars.rest_url + "wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1",
+		method: 'get',
+		url:  qod_vars.rest_url + "wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1",
 	}).done( function(response) {
 		let quotes = $("<div class='quotes-area'></div>")	
 		quotes.append(response[0].content.rendered);

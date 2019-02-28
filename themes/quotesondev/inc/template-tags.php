@@ -39,6 +39,7 @@ function show_single_quote ($query) {
 	if($query->is_home() && $query->is_main_query()) {
 		$query->set('posts_per_page', 1);
 		$query->set('orderby', 'rand');
+		return;
 	} 
 }
 add_filter('pre_get_posts', 'show_single_quote', 1);
