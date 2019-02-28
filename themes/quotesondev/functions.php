@@ -71,7 +71,6 @@ function qod_scripts() {
    ) );
  
 
-	// TODO:ENQUE SHOW-MORE THINGY
 }
 add_action( 'wp_enqueue_scripts', 'qod_scripts' );
 

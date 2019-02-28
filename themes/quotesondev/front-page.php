@@ -25,7 +25,6 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			//TODO: get this button working
 		<button type="button" id="show-more">Show Me Another!</button>
 
 
