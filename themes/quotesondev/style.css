@@ -316,7 +316,7 @@ html {
           box-sizing: inherit; }
 
 body {
-  background: #fff;
+  background: #222222;
   /* Fallback for when there is no custom background color defined. */ }
 
 blockquote,
@@ -543,13 +543,9 @@ a {
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-  display: inline;
-  float: left;
   margin-right: 1.5rem; }
 
 .alignright {
-  display: inline;
-  float: right;
   margin-left: 1.5rem; }
 
 .aligncenter {

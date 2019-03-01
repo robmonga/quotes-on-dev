@@ -7,7 +7,7 @@
 
 /**
  * Display navigation to next/previous set of posts when applicable.
- */
+ */ //TODO:USE THIS FOR THE NUMBERED NAVIGATION IN THE ARCHIVE TEMPLATE AND SEARCH RESULTS TEMPLATE
 function qod_numbered_pagination( $query_type = '' ) {
 
 	if ( $query_type ) {

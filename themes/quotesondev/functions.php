@@ -56,6 +56,7 @@ add_filter( 'stylesheet_uri', 'qod_minified_css', 10, 2 );
  * Enqueue scripts and styles.
  */
 function qod_scripts() {
+	wp_enqueue_style( 'load-fa','//use.fontawesome.com/releases/v5.7.2/css/all.css'); 
 	wp_enqueue_style( 'qod-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'qod-starter-navigation', get_template_directory_uri() . '/build/js/navigation.min.js', array(), '20151215', true );
@@ -66,14 +67,20 @@ function qod_scripts() {
 	wp_enqueue_script( 'qod_api', $script_url, array( 'jquery' ), false, true );
    wp_localize_script( 'qod_api', 'qod_vars', array(
 	   'rest_url' => esc_url_raw( rest_url() ),
+	   'home_url' => esc_url_raw( home_url() ),//TODO: did this with ben in lecture. double check.
 	   'wpapi_nonce' => wp_create_nonce( 'wp_rest' ),
-	   'post_id' => get_the_ID()
+	   'success' => 'Thanks, your quote submission was received!',//TODO: part of the submission form
+	   'failure' => 'Your quote was not submitted, try again'// part of the submission form.
    ) );
  
 
 }
 add_action( 'wp_enqueue_scripts', 'qod_scripts' );
 
+// Load Font Awesome
+// function enqueue_font_awesome() {
+// }
+// add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
 
 /**
  * Custom functions that act independently of the theme templates.

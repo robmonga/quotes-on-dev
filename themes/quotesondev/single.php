@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The main template file.
  *
  * @package QOD_Starter_Theme
  */
@@ -10,13 +10,31 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php if ( have_posts() ) : ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+			<?php if ( is_home() && is_front_page() ) : ?>
+				<header>
+					<i class="fas fa-quote-left"></i>
+						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<i class="fas fa-quote-right"></i>
+				</header>
+			<?php endif; ?>
 
-			<?php the_post_navigation(); ?>
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php endwhile; // End of the loop. ?>
+				<?php get_template_part( 'template-parts/content' ); ?>
+
+			<?php endwhile; ?>
+
+		<button type="button" id="show-more">Show Me Another!</button>
+
+
+		<?php else : ?>
+
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+		<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
