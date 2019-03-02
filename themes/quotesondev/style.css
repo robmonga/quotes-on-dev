@@ -590,13 +590,7 @@ a {
 
 body {
   font-family: "Exo Web";
-  background: #222222;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 15vh 15vh 10vh 20vh 40vh;
-  grid-template-areas: "header quote author another footer"; }
+  background: #222222; }
 
 .content-area {
   padding: 10px 10px 10px 10px; }

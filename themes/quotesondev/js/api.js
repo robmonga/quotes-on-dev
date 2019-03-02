@@ -10,7 +10,7 @@
 	event.preventDefault();
 
 	// store the pre-AJAX request URL for back/forward nav
-	 lastPage = document.URL;
+	lastPage = document.URL;
 
 	$.ajax({
 		method: 'get',
@@ -26,21 +26,24 @@
 		console.log (post)
 		const url = qod_vars.home_url + '/' + response[0].slug; // creates a new url with an author slug
 		history.pushState(null, null, url);
-		console.log(url);
-		let source_url =response[0]._qod_quote_source;//pop
+		// console.log(url);
+		// let source_url =response[0]._qod_quote_source_url;//pop
+		let source =response[0]._qod_quote_source;//pop
 
 		if (response[0]._qod_quote_source && response[0]._qod_quote_source_url ){
 			//loadd conetnt title, source and url
 			$('.entry-content').html(response[0].content.rendered);//content
 			$('.entry-title').html(response[0].title.rendered);//author
-				$('.entry-source').html(source_url); // source
-
+			$('.entry-source').html(source); // source
+			
+			
 		} else if (response[0]._qod_quote_source && !response[0]._qod_quote_source_url){
 			//load content, title, source 
 			$('.entry-content').html(response[0].content.rendered);
 			$('.entry-title').html(response[0].title.rendered);//author
-
-
+			
+			
+			
 		} else {
 			// load content and author
 			$('.entry-content').html(response[0].content.rendered);//content 
@@ -52,3 +55,30 @@
 
  });
 })(jQuery);
+
+// (function($) {
+
+// 	$('.submit-form').on(submit, function(event){
+// 		event.preventDefault();
+// 		const quotes = {
+// 			title: $('.author-quote').val(),
+// 			content: $('.your-quotes').val(),
+// 			_qod_quote_source: $('.fidn-quote').val(),
+// 			_qod_quote_source_url: $('.quote-source').val()
+// 		};
+// 	})
+
+// $.ajax({
+// 	method: 'post',
+// 	url:  qod_vars.rest_url + "wp/v2/posts/",
+// 	data: quotes,
+// 	beforeSend:function(xhr) {
+// 		xhr.setRequestHeader('X-WP-Nonce', qod_vars.wpapi_nonce);
+// 	}
+// }).done( function() {
+// 	$('#submit-area').html(qod_vars.success)
+// }).fail( function() {
+// 	$('submit-area').html(qod_vars.failure)
+// });
+// });
+// (jQuery);
