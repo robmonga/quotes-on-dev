@@ -56,29 +56,28 @@
  });
 })(jQuery);
 
-// (function($) {
-
-// 	$('.submit-form').on(submit, function(event){
-// 		event.preventDefault();
-// 		const quotes = {
-// 			title: $('.author-quote').val(),
-// 			content: $('.your-quotes').val(),
-// 			_qod_quote_source: $('.fidn-quote').val(),
-// 			_qod_quote_source_url: $('.quote-source').val()
-// 		};
-// 	})
-
-// $.ajax({
-// 	method: 'post',
-// 	url:  qod_vars.rest_url + "wp/v2/posts/",
-// 	data: quotes,
-// 	beforeSend:function(xhr) {
-// 		xhr.setRequestHeader('X-WP-Nonce', qod_vars.wpapi_nonce);
-// 	}
-// }).done( function() {
-// 	$('#submit-area').html(qod_vars.success)
-// }).fail( function() {
-// 	$('submit-area').html(qod_vars.failure)
-// });
-// });
-// (jQuery);
+(function($) {
+	const quotes = {
+		title: $('#quote-author').val(),
+		content: $('#the-quote').val(),
+		_qod_quote_source: $('#quote-source').val(),
+		_qod_quote_source_url: $('#source-url').val()
+	};
+	$('#submit-button').on('click', function(event){
+		event.preventDefault();
+		
+		$.ajax({
+			method: 'post',
+			url:  qod_vars.rest_url + 'wp/v2/posts/',
+			data: quotes,
+			beforeSend:function(xhr) {
+				xhr.setRequestHeader('X-WP-Nonce', qod_vars.wpapi_nonce);
+			}
+		})
+}).done( function() {
+	$('#submit-quote').html(qod_vars.success)
+}).fail( function() {
+	$('#submit-quote').html(qod_vars.failure)
+		});
+	});
+(jQuery);
