@@ -4,7 +4,6 @@
 
 html {
   box-sizing: border-box;
-  font-size: 1rem;
 }
 
 *,
@@ -41,11 +40,11 @@ ol {
 }
 
 ul {
-  list-style: disc;
+  list-style: none;
 }
 
 ol {
-  list-style: decimal;
+  list-style: none;
 }
 
 li > ul,

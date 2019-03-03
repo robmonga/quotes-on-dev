@@ -1,7 +1,52 @@
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
+// basic layout 
+
+.site-header {
+display:grid;
+grid-template-rows: 1fr;
+padding: 1rem;
+}
+.site-content {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+
+    section {
+        justify-content: center;
+    }
+}
+
+.site-footer {
+    display: grid;
+    grid-template-rows: 1fr;
+
+}
 
 /* All Archives Page */
 
+.list-all-authors {
+    padding: 1rem;
+    .each-title {
+        margin: auto .5rem;
+    }
+}
+
+.quote-categories {
+    ul {
+        display:flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+        justify-content: flex-start;
+        li{ margin: auto .5rem;
+        }
+    }
+}
+
+.wp-tag-cloud {
+    display:flex;
+    margin: auto .5rem;
+}
 /* Submit a Quote Page */
+

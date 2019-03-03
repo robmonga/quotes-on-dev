@@ -6,7 +6,8 @@
 
 a {
 	color: $color__link;
-
+	text-decoration: none;
+	
 	&:visited {
 		color: $color__link-visited;
 	}
@@ -28,22 +29,20 @@ a {
 
 .main-navigation {
 	clear: both;
-	display: block;
+	display: flex;
 	float: left;
-	width: 50%;;
+	width: 75%;;
 
 	ul {
-		display: none;
 		list-style: none;
-		margin: 0;
-		padding-left: 0;
+		margin: 5px;
+		padding: 0;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
 			top: $base__space-unit;
-			left: -999rem;
 			z-index: 99999;
 
 			ul {
@@ -79,6 +78,9 @@ a {
 	li {
 		float: left;
 		position: relative;
+		padding: 0 1rem;
+		border-right: $border__solid;
+
 
 		&:hover > a,
 		&.focus > a {
@@ -93,40 +95,44 @@ a {
 	.current-menu-item > a,
 	.current_page_ancestor > a {
 	}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-// TODO: REMOVE DISPLAY NONE BULLSHIT
-@media screen and (min-width: 768px) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
+	// take out the border-right on 'brought to you by red academy'
+	.menu-item-220 {
+		border-right:none;
 	}
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
+// /* Small menu. */
+// .menu-toggle,
+// .main-navigation.toggled ul {
+// 	display: block;
+// }
+// // TODO: REMOVE DISPLAY NONE BULLSHIT
+// @media screen and (min-width: 768px) {
+// 	.menu-toggle {
+// 		display: none;
+// 	}
+// 	.main-navigation ul {
+// 		display: block;
+// 	}
+// }
 
-	.site-main & {
-		margin: 0 0 $base__space-unit;
-		overflow: hidden;
-	}
+// .comment-navigation,
+// .posts-navigation,
+// .post-navigation {
 
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
+// 	.site-main & {
+// 		margin: 0 0 $base__space-unit;
+// 		overflow: hidden;
+// 	}
 
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
-}
+// 	.nav-previous {
+// 		float: left;
+// 		width: 50%;
+// 	}
+
+// 	.nav-next {
+// 		float: right;
+// 		text-align: right;
+// 		width: 50%;
+// 	}
+// }

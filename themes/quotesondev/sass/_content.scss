@@ -33,26 +33,16 @@
 }
 // THE CRAZY ROB CSS STARTS HERE
 // FRONT PAGE DESKTOP STYLING
-body {
-	font-family: "Exo Web";
-	background: #222222 ;
-	// align-content: center;
-	// display: grid;
-	// grid-template-columns: 100vw;
-	// grid-template-rows: 15vh 15vh 10vh 20vh 40vh ;
-	// grid-template-areas: "header
-	// 					  quote
-	// 					  author
-	// 					  another
-	// 					  footer";
-
-	// grid-template: [row1-start];
+post-template-default {
+	background: $color__background-body ;
+	align-content: center;
+	display: grid;
+	grid-template-columns: 100vw;
+	grid-template-rows: 15vh 15vh 10vh 20vh 40vh ;
+	grid-template-areas: "header
+						  quote
+						  author
+						  another
+						  footer";
 }
 
-
-.content-area {
-	padding: 10px 10px 10px 10px;
-	a {
-	text-decoration: none;
-	}
-}
