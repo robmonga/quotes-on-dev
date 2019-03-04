@@ -16,7 +16,7 @@ get_header(); ?>
 			<input type="text" id="quote-author"  name="quote-author" required>
 			
 		<label for="the-quote">Quote</label>
-			<input type="text" id="the-quote" name="the-quote" required>
+			<textarea  rows="2" id="the-quote" name="the-quote" required></textarea>
 
 			<label for="quote-source">Where did you find the quote? (e.g. book name)</label>
 				<input type="text" id="quote-source"  name="quote-source">
