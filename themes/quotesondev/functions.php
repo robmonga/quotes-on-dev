@@ -65,12 +65,13 @@ function qod_scripts() {
 	$script_url = get_template_directory_uri() . '/js/api.js';
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'qod_api', $script_url, array( 'jquery' ), false, true );
+	
    wp_localize_script( 'qod_api', 'qod_vars', array(
 	   'rest_url' => esc_url_raw( rest_url() ),
-	   'home_url' => esc_url_raw( home_url() ),//TODO: did this with ben in lecture. double check.
+	   'home_url' => esc_url_raw( home_url() ),
 	   'wpapi_nonce' => wp_create_nonce( 'wp_rest' ),
-	   'success' => 'Thanks, your quote submission was received!',//TODO: part of the submission form
-	   'failure' => 'Your quote was not submitted, try again'// part of the submission form.
+	   'success' => 'Thanks, your quote submission was received!',
+	   'failure' => 'Your quote was not submitted, try again'
    ) );
  
 
