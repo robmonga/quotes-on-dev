@@ -72,8 +72,13 @@
         $('#the-quote').val('');
         $('#quote-source').val('');
         $('#source-url').val('');
-        console.log('success');
+        $('#submit-quote').empty();
+        $('#submit-quote').html("Thanks, your quote submission was received!");
+        
       })
-      .fail(function() {});
+      .fail(function() {
+        $('#submit-quote').empty();
+        $('#submit-quote').html('Sorry, something went wrong.');
+      });
   });
 })(jQuery);
