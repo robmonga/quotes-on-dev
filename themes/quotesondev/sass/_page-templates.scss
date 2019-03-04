@@ -3,27 +3,38 @@
 --------------------------------------------------------------*/
 // basic layout 
 
-.site-header {
-display:grid;
-grid-template-rows: 1fr;
-padding: 1rem;
-}
-.site-content {
-    display: grid;
-    grid-template-rows: 1fr;
+// .site-header {
+// display:grid;
+// padding: 1rem;
+// }
+// .site-content {
+//     display: grid;
+//     grid-template-rows:  1fr;
+//     grid-template-columns: fit-content() 1fr;
+//     grid-column-gap: 1rem;
+
+//     section {
+//         justify-content: center;
+//     }
+// }
+
+// .site-footer {
+//     display: grid;
+//     grid-template-rows: 1fr;
+
+// }
+
+
+/* HOME SCREEN */
+.home
+.page {
+    @include tablet-max;
+    display:grid;
     grid-template-columns: 1fr;
-
-    section {
-        justify-content: center;
-    }
-}
-
-.site-footer {
-    display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-gap: 50px;
 
 }
-
 /* All Archives Page */
 
 .list-all-authors {
@@ -32,7 +43,6 @@ padding: 1rem;
         margin: auto .5rem;
     }
 }
-
 .quote-categories {
     ul {
         display:flex;
@@ -43,7 +53,6 @@ padding: 1rem;
         }
     }
 }
-
 .wp-tag-cloud {
     display:flex;
     margin: auto .5rem;

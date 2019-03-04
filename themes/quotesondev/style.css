@@ -260,7 +260,7 @@ textarea {
   color: #fff;
   font-family: "Exo";
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.5; }
 
 /* Headings */
@@ -558,14 +558,13 @@ a {
   clear: both;
   margin: 0 0 1.5rem; }
 
-post-template-default {
-  background: #222222;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 15vh 15vh 10vh 20vh 40vh;
-  grid-template-areas: "header quote author another footer"; }
+.site-content {
+  display: grid; }
+  .site-content .submit-quote {
+    display: grid;
+    grid-template-rows: 5 auto;
+    grid-template-columns: 1 minmax(100px, 200px);
+    width: 500px; }
 
 /*--------------------------------------------------------------
 # Media
@@ -587,21 +586,17 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
-.site-header {
+/* HOME SCREEN */
+.home
+.page {
   display: grid;
-  grid-template-rows: 1fr;
-  padding: 1rem; }
-
-.site-content {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr; }
-  .site-content section {
-    grid-template-areas: inherit; }
-
-.site-footer {
-  display: grid;
-  grid-template-rows: 1fr; }
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-gap: 50px; }
+  @media (max-width: 1080px) {
+    .home
+.page .fas {
+      display: none; } }
 
 /* All Archives Page */
 .list-all-authors {

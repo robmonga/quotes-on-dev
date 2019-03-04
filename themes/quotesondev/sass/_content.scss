@@ -31,18 +31,14 @@
 	clear: both;
 	margin: 0 0 $base__space-unit;
 }
-// THE CRAZY ROB CSS STARTS HERE
-// FRONT PAGE DESKTOP STYLING
-post-template-default {
-	background: $color__background-body ;
-	align-content: center;
-	display: grid;
-	grid-template-columns: 100vw;
-	grid-template-rows: 15vh 15vh 10vh 20vh 40vh ;
-	grid-template-areas: "header
-						  quote
-						  author
-						  another
-						  footer";
-}
 
+.site-content {
+	display:grid;
+	.submit-quote {
+		display:grid;
+		grid-template-rows: 5 auto;
+		grid-template-columns: 1 minmax(100px, 200px);
+		width: 500px;
+		
+	}
+}
