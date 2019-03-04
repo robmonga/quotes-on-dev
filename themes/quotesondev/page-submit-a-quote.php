@@ -9,31 +9,28 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<!-- TODO: this page uses an if loop with else then endif -->
- <!-- NEED IS_USER_LOGGED_IN &&  current_user_can('edit posts') -->
-
-			<?php if ( have_posts() ) : the_post(); ?>
+			<?php if (is_user_logged_in() && current_user_can('edit_posts')):?>
 
 	<form class="submit-quote" id="submit-quote" method="post">
 		<label for="quote-author">Author of Quote</label>
-			<input id="quote-author" type="text" name="quote-author" >
+			<input type="text" id="quote-author"  name="quote-author" required >
 			
 		<label for="the-quote">The Quote</label>
-			<input id="the-quote"type="textarea" name="the-quote">
+			<input type="text" id="the-quote" name="the-quote" required>
 
 			<label for="quote-source">Where did you find the quote? (e.g. book name)</label>
-				<input id="quote-source" type="text" name="quote-source">
+				<input type="text" id="quote-source"  name="quote-source">
 
 			<label for="source-url">Provide the URL of the quote source, if available</label>	
-				<input id="source-url" type="text" name="source-url">
+				<input type="text" id="source-url"  name="source-url">
 
 			<input type="submit" value="submit" class="submit-button" id="submit-button">
+			
 
-	</form>
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+		</form>
 			<?php else: ?>
-
-			<?php endif; // End of the loop. ?>
+			<a href="<?php echo wp_login_url();?>">Click here to login</a>
+				<?php endif; // End of the loop. ?>
 <!-- using a if else statement sprintf WP_LOGIN_URL to get  a login button -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
